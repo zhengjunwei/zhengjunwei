@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "ng2学习"
+date:   2015-10-07 15:57:54
+categories: jekyll update
+---
+按官方的guide做的
+下面是操作的步骤:
+  202  npm install -g tsd@^0.6.0
+  208  mkdir ng2
+  209  cd ng2
+  210  clear
+  211  tsd install angular2 es6-promise rx rx-lite
+  214  touch app.ts index.html
+  216  npm install -g typescript@^1.5.0
+  221  tsc --watch -m commonjs -t es5 --emitDecoratorMetadata app.ts
+  这一步的时候，你会发现文件夹里面ts会被watch并编译成js代码了
+  226  npm install -g http-server
+  228  http-server
+
+下面是代码
+app.ts
+
+{% highlight javascript %}
+import {Component,view,bootstrap} from 'angular2/angular2';
+@Component({
+	selector:'my-app'
+})
+@view({
+	template:'<h1>{{name}}</h1>'
+})
+
+class MyAppComponent{
+	name:string;
+	constructor(){
+		this.name = "Alice";
+	}
+}
+
+
+bootstrap(MyAppComponent);
+{% endhighlight %}
+
+{% highlight html%}
+<html>
+  <head>
+    <title>Angular 2 Quickstart</title>
+    <script src="https://github.jspm.io/jmcriffey/bower-traceur-runtime@0.0.87/traceur-runtime.js"></script>
+    <script src="https://jspm.io/system@0.16.js"></script>
+	<script src="https://code.angularjs.org/2.0.0-alpha.28/angular2.dev.js"></script>
+  </head>
+  <body>
+    <!-- The app component created in app.ts -->
+    <my-app></my-app>
+	<script>System.import('app');</script>
+  </body>
+</html>
+{% endhighlight %}
+
+ng2从react.js中借鉴了refs的概念，再也不用一堆的ng了

@@ -10,8 +10,9 @@ reactjs的一些概念:
 组件里可以用组件，有一种shadow dom的感觉
 虚拟DOM里也有节点树的感觉，可以遍历(findDOMNode,this.props.children)
 组件是一个类函数的东西，可以在调用的时候传入变量，具体是通过props属性传入的
-组件是一个有限状态机，改变state就行了，不同的state状态，发生不同的事情
+组件是一个state machine，改变state就行了，不同的state状态，发生不同的事情
 组件的生命周期:
+
 - Mounting 
 - Updating
 - Unmounting
@@ -20,4 +21,11 @@ reactjs的一些概念:
 - componentWillUpdate
 - compoenntDidUpdate
 - componentWillUnmount
+
 ajax方面，可以用jQuery里的$.get,$.post，如果数据返回成功了，通过改变component的state(setState)来render dom
+state中的data(不管是从页面获取的还是从ajax获取的)如果是列表，可以用map来自动遍历
+ 可以双向绑定，但好像不是真正的双向(React.addons.LinkStateMixin)
+
+ plus：react和ng1,d3.js等进行整合
+
+ 又plus：flux和rxjs和react的整合是一个学习的重点
