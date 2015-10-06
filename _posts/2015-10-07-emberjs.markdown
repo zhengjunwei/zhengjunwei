@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "ember.js学习"
+date:   2015-10-07 15:57:54
+categories: jekyll update
+---
+安装就不说了，确保不被gfw就很好安装了,ember-cli,bower install,npm install,完了直接ember serve就可以使用了，默认端口4200，ember是live load的，所以立马可以看到更改的效果。
+任何MVC框架最核心的就是路由，我们先看路由.
+
+- route
+
+{% highlight javascript %}
+	Router.map(function() {
+	  this.route('about');
+	  this.route('favorites');
+	});
+
+{% endhighlight %}
+
+上面的只要是你的hbs模板默认的和你的路由名字是一样的，就不用指定了，这点和TP是一样的。
+
+在hbs里指定跳转代码
+
+{% highlight html %}
+
+	#link-to "index" 跳e转到index\ /link-to (link-to外面是有二个大括号，被jekyll解析掉了)
+
+{% endhighlight %}
+
+outlet要写在模板的最后面，要不然会报错
+
+//看了下ng2，我靠，确实比ember牛，得开始学ng2了
