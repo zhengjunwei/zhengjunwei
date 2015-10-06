@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "reactjs学习"
+date:   2015-10-07 15:57:54
+categories: jekyll update
+---
+reactjs的一些概念:
+抛弃了传统的MVC的基于template的概念，组件是第一公民
+抛弃了DOM，创建了虚拟DOM的概念，最大化提升效率，鉴于页面里render一个DOM的代价巨大，只render虚拟DOM中改变的部分。
+组件里可以用组件，有一种shadow dom的感觉
+虚拟DOM里也有节点树的感觉，可以遍历(findDOMNode,this.props.children)
+组件是一个类函数的东西，可以在调用的时候传入变量，具体是通过props属性传入的
+组件是一个有限状态机，改变state就行了，不同的state状态，发生不同的事情
+组件的生命周期:
+- Mounting 
+- Updating
+- Unmounting
+- componentWillMount
+- componentDidMount
+- componentWillUpdate
+- compoenntDidUpdate
+- componentWillUnmount
+ajax方面，可以用jQuery里的$.get,$.post，如果数据返回成功了，通过改变component的state(setState)来render dom
